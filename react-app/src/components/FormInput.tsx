@@ -23,23 +23,29 @@ const FormInput = () => {
         <div className="form-group mb-2">
           <label htmlFor="exampleInputEmail1 mb-2">Item</label>
           <input
-            {...register("item")}
+            {...register("item", { required: true, setValueAs: String })}
             type="name"
             className="form-control"
             id="item"
             placeholder="Enter Item"
           ></input>
+          {errors.item?.type === "required" && (
+            <p className="text-danger">Item Must required</p>
+          )}
         </div>
 
         <div className="form-group mb-2">
           <label htmlFor="price mb-2">Price</label>
           <input
-            {...register("price")}
+            {...register("price", { required: true, setValueAs: Number })}
             type="number"
             className="form-control"
             id="price"
             placeholder="price"
           ></input>
+          {errors.item?.type === "required" && (
+            <p className="text-danger">Price Must required</p>
+          )}
         </div>
 
         <div className="form-group mb-2">
@@ -47,7 +53,7 @@ const FormInput = () => {
           <select
             className="form-control"
             id="catagories"
-            {...register("catagory")}
+            {...register("catagory", { required: true, setValueAs: String })}
           >
             <option>Grosery</option>
             <option>Bill</option>
