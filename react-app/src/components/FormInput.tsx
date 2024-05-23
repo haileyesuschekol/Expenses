@@ -27,8 +27,8 @@ const FormInput = () => {
         <div className="form-group mb-2">
           <label htmlFor="catagories mb-2">Catagories</label>
           <select className="form-control" id="catagories">
-            <option>1</option>
-            <option>2</option>
+            <option>Grosery</option>
+            <option>Bill</option>
           </select>
         </div>
         <button type="submit" className="btn btn-primary mb-2">
