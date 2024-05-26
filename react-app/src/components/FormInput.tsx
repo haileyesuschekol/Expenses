@@ -1,6 +1,4 @@
-import "bootstrap/dist/css/bootstrap.css"
 import { useForm, SubmitHandler } from "react-hook-form"
-
 interface FormData {
   item: string
   price: number
