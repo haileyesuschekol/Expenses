@@ -4,15 +4,14 @@ import { useState } from "react"
 import List from "./components/List"
 import FilterExpances from "./components/FilterExpances"
 import FormExpense from "./components/FormExpense"
-import catagory from "./catagories"
+// import catagory from "./catagories"
 
 function App() {
   const [selectedCatagory, setSelectedCatagory] = useState("")
   const [expanses, setExpanses] = useState([
-    { id: 1, description: "aaa", amount: 3, catagory: "Utility" },
-    { id: 2, description: "bbb", amount: 3, catagory: "Utility" },
-    { id: 3, description: "ccc", amount: 3, catagory: "Girosery" },
-    { id: 4, description: "ddd", amount: 3, catagory: "Entertainment" },
+    { id: 1, description: "Bill", amount: 30, catagory: "Utility" },
+    { id: 2, description: "Fruites", amount: 20, catagory: "Girosery" },
+    { id: 4, description: "Cinema", amount: 10, catagory: "Entertainment" },
   ])
 
   const VisibleExpenses = selectedCatagory
@@ -22,7 +21,11 @@ function App() {
   return (
     <>
       <div className="mb-5">
-        <FormExpense />
+        <FormExpense
+          onsubmit={(expanse) =>
+            setExpanses([...expanses, { ...expanse, id: expanses.length + 1 }])
+          }
+        />
       </div>
       <div className="mb-3">
         <FilterExpances
