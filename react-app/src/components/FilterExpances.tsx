@@ -1,3 +1,5 @@
+import { catagory } from "../App"
+
 interface FilterProp {
   onSelectCatagory: (catagory: string) => void
 }
@@ -9,9 +11,11 @@ const FilterExpances = ({ onSelectCatagory }: FilterProp) => {
       onChange={(event) => onSelectCatagory(event.target.value)}
     >
       <option value="">All catagories</option>
-      <option value="Utility">Utility</option>
-      <option value="Girosery">Girosery</option>
-      <option value="Entertainment">Entertainment</option>
+      {catagory.map((catagory) => (
+        <option key={catagory} value={catagory}>
+          {catagory}
+        </option>
+      ))}
     </select>
   )
 }

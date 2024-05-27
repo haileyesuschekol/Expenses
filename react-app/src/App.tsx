@@ -3,6 +3,8 @@ import { useState } from "react"
 
 import List from "./components/List"
 import FilterExpances from "./components/FilterExpances"
+import FormExpense from "./components/FormExpense"
+export const catagory = ["Utility", "Entertainment", "Girosery"]
 
 function App() {
   const [selectedCatagory, setSelectedCatagory] = useState("")
@@ -19,6 +21,9 @@ function App() {
 
   return (
     <>
+      <div className="mb-5">
+        <FormExpense />
+      </div>
       <div className="mb-3">
         <FilterExpances
           onSelectCatagory={(catagory) => setSelectedCatagory(catagory)}
