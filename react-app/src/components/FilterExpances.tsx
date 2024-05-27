@@ -1,4 +1,4 @@
-import { catagory } from "../App"
+import catagory from "../catagories"
 
 interface FilterProp {
   onSelectCatagory: (catagory: string) => void

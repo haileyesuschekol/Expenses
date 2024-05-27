@@ -4,7 +4,7 @@ import { useState } from "react"
 import List from "./components/List"
 import FilterExpances from "./components/FilterExpances"
 import FormExpense from "./components/FormExpense"
-export const catagory = ["Utility", "Entertainment", "Girosery"]
+import catagory from "./catagories"
 
 function App() {
   const [selectedCatagory, setSelectedCatagory] = useState("")
